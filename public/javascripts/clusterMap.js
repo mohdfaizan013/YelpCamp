@@ -3,13 +3,12 @@ const map = new mapboxgl.Map({
 container: 'cluster-map',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
 style: 'mapbox://styles/mapbox/streets-v12',
-center: [-103.5917, 40.6699],
+center: [78.9629, 20.5937],
 zoom: 3
 });
 
 
 map.addControl(new mapboxgl.NavigationControl());
-
 
 map.on('load', function () {
     // Add a new source from our GeoJSON data and
@@ -17,8 +16,7 @@ map.on('load', function () {
     // add the point_count property to your source data.
     map.addSource('campgrounds', {
         type: 'geojson',
-        // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
-        // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+        // Point to GeoJSON data.
         data: campgrounds,
         cluster: true,
         clusterMaxZoom: 14, // Max zoom to cluster points on
